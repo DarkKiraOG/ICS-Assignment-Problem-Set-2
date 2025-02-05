@@ -1,0 +1,17 @@
+(* Extended Euclidean Algorithm in OCaml *)
+
+let rec bez_coeff a b =
+  if b = 0 then (1, 0)
+  else
+    let (x1, y1) = bez_coeff b (a mod b) in
+    (y1, x1 - (a / b) * y1)
+;;
+
+let a = 60;;
+let b = 105;;
+
+let (x, y) = bez_coeff a b;;
+
+print_int x;
+print_newline ();;
+print_int y;
