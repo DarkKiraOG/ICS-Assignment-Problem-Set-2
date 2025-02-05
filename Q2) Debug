@@ -1,1 +1,28 @@
 
+
+(* Problem 2-2. (SOLVED) *)
+
+(* A- factorial 5 should return 120 *)
+
+let rec factorial (n : int) : int =
+  if n = 0 then 1
+  else n * factorial (n - 1)
+
+
+(* B- fibonacci 5 should return 5 *)
+
+let rec fibonacci (n : int) : int =
+  if n = 0 then 0
+  else if n = 1 then 1
+  else fibonacci (n - 1) + fibonacci (n - 2)
+
+
+(* C- maybe your GCD code wasn’t working! *)
+
+let rec gcd a b =
+  if a = b then a
+  else if a > b then gcd (a - b) b
+  else gcd a (b - a)  
+
+
+
