@@ -12,6 +12,6 @@ let b = 105;;
 
 let (x, y) = bez_coeff a b;;
 
-print_int x;
+print_int x;;
 print_newline ();;
-print_int y;
+print_int y;;
