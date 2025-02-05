@@ -5,7 +5,7 @@
 (* A- factorial 5 should return 120 *)
 
 let rec factorial (n : int) : int =
-  if n = 0 then 1
+  if n = 0 then 1                      (* Replaced the "n = 0 then 0" with "n = 0 then 1" as factorial of 0 is 1. *)
   else n * factorial (n - 1)
 
 
@@ -14,15 +14,15 @@ let rec factorial (n : int) : int =
 let rec fibonacci (n : int) : int =
   if n = 0 then 0
   else if n = 1 then 1
-  else fibonacci (n - 1) + fibonacci (n - 2)
+  else fibonacci (n - 1) + fibonacci (n - 2)        (* Removed the "+ 1" as it was extra and incorrect.*)
 
 
 (* C- maybe your GCD code wasn’t working! *)
 
 let rec gcd a b =
   if a = b then a
-  else if a > b then gcd (a - b) b
-  else gcd a (b - a)  
+  else if a > b then gcd (a - b) b                   (* Applied brackets to the argument "a-b", as without it the syntax would be wrong. *)
+  else gcd a (b - a)                                 (* Applied brackets to the argument "b-a", as without it the syntax would be wrong. *)
 
 
 
