@@ -1,24 +1,24 @@
-
 let x = 3;;
 let n = 4;;
 let m = 5;;
 
 
 let rec exponential power num = 
-    if power = 1 then num
-    else let num = num*num  in exponential (power - 1) num 
-   
+    if power = 0 then 1  
+    else num * exponential (power - 1) num
 ;;
 
 
 let even_odd power number =
-    if (power mod 2) = 0
-    then let power = power/2 in (exponential power number) * (exponential power number)
-    else
-    let power = (power-1)/2 in number * (exponential power number) * (exponential power number)
-    
+    if (power mod 2) = 0 then 
+        let power = power / 2 in 
+        let result = exponential power number in
+        result * result  
+    else 
+        let power = (power - 1) / 2 in 
+        let result = exponential power number in
+        number * result * result  
 ;;
 
 let a = even_odd m x;;
-
 print_int a;;
