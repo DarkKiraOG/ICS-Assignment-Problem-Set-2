@@ -1,0 +1,13 @@
+(* An updated version used remainders, finding the GCD of a and b
+   by instead solving for the GCD of b and the remainder of a divided by b. *)
+
+let a = 30;;
+let b = 105;;
+
+let rec gcd_mod x y =
+  if y = 0 then x
+  else gcd_mod y (x mod y)
+;;
+
+let gcd = gcd_mod a b;;
+print_int gcd;;
