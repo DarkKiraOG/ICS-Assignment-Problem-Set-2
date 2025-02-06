@@ -6,22 +6,15 @@ let n = 4;;
 let m = 5;;
 
 
-let rec exponential power num = 
-    if power = 0 then 1  
-    else num * exponential (power - 1) num
+let rec fast_pow x n =
+  if n = 0 then 1
+  else if n mod 2 = 0 then 
+    let half = fast_pow x (n / 2) in
+    half * half
+  else 
+    x * fast_pow x (n - 1)
 ;;
 
 
-let even_odd power number =
-    if (power mod 2) = 0 then 
-        let power = power / 2 in 
-        let result = exponential power number in
-        result * result  
-    else 
-        let power = (power - 1) / 2 in 
-        let result = exponential power number in
-        number * result * result  
-;;
-
-let a = even_odd m x;;
+let a = fast_pow m x;;
 print_int a;;
