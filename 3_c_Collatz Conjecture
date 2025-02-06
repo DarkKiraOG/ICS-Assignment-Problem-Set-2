@@ -1,3 +1,20 @@
+(*
+
+ This function takes any positive number and repeatedly transforms it according to the following rule:
+
+If the number is even, then divide it by 2.
+
+If the number is odd, multiply it by 3 and then add 1.
+
+Repeat this process until the number gets equal to 1.
+
+This also counts the number of steps needed to get from any number to 1. The surprising feature of this 
+algorithm is that regardless of which number you start with, you somehow always seem to end up with 1.
+However, it has not yet been proved that this is always the case.
+
+*)
+
+
 let rec col num steps =
     if num = 1 then steps
     else if num mod 2 = 0 then col (num / 2) (steps + 1)
