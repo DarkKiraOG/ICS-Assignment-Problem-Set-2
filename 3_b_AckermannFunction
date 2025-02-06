@@ -1,11 +1,15 @@
-(* The Ackermann function is a fascinating function which grows
-very rapidly.
-The function is defined as:
-A(0, n) = n + 1
-A(m + 1, 0) = A(m, 1)
+(*       Ackermann function is another special recursive function that takes
+         the two numbers a and b to apply different rules based on its values.
 
-A(m + 1, n + 1) = A(m, A(m + 1, n)) 
+         It returns b + 1, if a equals 0.
 
+         If a greater than 0 but b = 0, then it makes a call with a - 1 and 1.
+
+         If both a and b are greater than 0, the function calls itself twice:
+         first with a and b - 1, then using that result in another recursive call.
+         It grows extremely fast and takes extremely large values for inputs whose
+         value is relatively small. It is one of those applications that show deep
+         recursion; it calls itself many times before achieving a solution.
 *)
 
 let rec ack a b =
