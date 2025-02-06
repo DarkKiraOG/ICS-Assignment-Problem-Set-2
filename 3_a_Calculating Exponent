@@ -1,4 +1,12 @@
-(*              *)
+(*
+    This function calculates x^n (x raised to the power n) much faster than we could by just multiplying x by itself n times.
+    Instead of doing x * x * x. repeatedly, we take advantage of the fact that exponents can be broken down.
+ 
+    If n is 0, any number raised to 0 is 1.
+    If n is even, we work out (x^n = (x^2)^(n/2)), that is. We square x and halve the exponent.
+    If n is odd, we calculate (x^n = x * (x^2)^((n-1)/2)), so we bring out one x and then apply the even rule.
+    This method reduces the multiplications required. Thus, it is much faster than the usual method. 
+                                                                                                                        *)
 
 
 let x = 3;;
